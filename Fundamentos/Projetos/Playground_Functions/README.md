@@ -54,17 +54,6 @@
     * npm install
 
 
-## Como desenvolver
-
-### Linter
-
-Para garantir a qualidade do seu código de forma a tê-lo mais legível, de mais fácil manutenção e seguindo as boas práticas de desenvolvimento nós utilizamos neste projeto o linter `ESLint`. Para rodar o linter localmente, execute o comando abaixo:
-
-```bash
-npm run lint
-```
-
-
 ### Avaliador automático
 
 * Para avaliar os requisitos, rode o comando abaixo:
