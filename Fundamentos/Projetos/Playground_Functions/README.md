@@ -74,7 +74,6 @@ npm test compareTrue
 
 ## Requisitos do projeto
 
-
 ### 👀 Observações importantes:
 
 * Para verificar se a sua função foi criada corretamente basta instalar a extensão `code runner` no _VSCode_.
