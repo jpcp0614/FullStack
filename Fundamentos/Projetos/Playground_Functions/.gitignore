@@ -3,7 +3,6 @@
 # VSCode repo settings
 .vscode
 node_modules/
-tests/
 .DS_Store
 .trybe
-
+.editorconfig
