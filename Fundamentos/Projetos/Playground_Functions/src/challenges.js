@@ -49,14 +49,37 @@ function highestCount(array) {
   return count;
 }
 
-// Desafio 7
-function catAndMouse() {
-  // seu código aqui
+//* Desafio 7
+function catAndMouse(mouse, cat1, cat2) {  
+  let result = '';
+  let distanceCat1Mouse = Math.abs(cat1 - mouse); 
+  let distanceCat2Mouse = Math.abs(cat2 - mouse); 
+  if(distanceCat1Mouse < distanceCat2Mouse){
+    result = 'cat1';
+  } else if(distanceCat1Mouse > distanceCat2Mouse){
+    result = 'cat2';
+  } else{
+    result = 'os gatos trombam e o rato foge';
+  }
+  return result
 }
 
-// Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+//* Desafio 8
+function fizzBuzz(array) {
+  let result = [];
+  for (let i = 0; i < array.length; i++){   
+    let number = array[i];
+    if (number % 15 == 0) {
+      result.push('fizzBuzz');
+    } else if (number % 3 == 0) {
+      result.push('fizz');
+    } else if (number % 5 == 0) {
+      result.push('buzz');
+    } else {
+      result.push('bug!');
+    }
+  }
+  return result;
 }
 
 // Desafio 9
