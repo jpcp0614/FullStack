@@ -82,12 +82,36 @@ function fizzBuzz(array) {
   return result;
 }
 
-// Desafio 9
-function encode() {
-  // seu código aqui
+//* Desafio 9
+function encode(string) {
+  let vowels = {
+    a: "1",
+    e: "2",
+    i: "3",
+    o: "4",
+    u: "5",
+  }
+  let result = "";
+  for (let char of string){
+    result += vowels[char] || char;
+  }
+  return result;    
 }
-function decode() {
-  // seu código aqui
+
+
+function decode(string) {
+  let numbers = {
+    1: "a",
+    2: "e",
+    3: "i",
+    4: "o",
+    5: "u",
+  }
+  let result = "";
+  for (let char of string){
+    result += numbers[char] || char;
+  }
+  return result;
 }
 
 module.exports = {
