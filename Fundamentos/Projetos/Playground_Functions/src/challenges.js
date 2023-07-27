@@ -12,14 +12,14 @@ function calcArea(base, height) {
   return base * height * 0.5;
 }
 
-// Desafio 3
+//* Desafio 3
 function splitSentence(string) {
   return string.split(" ");
 }
 
-// Desafio 4
-function concatName() {
-  // seu código aqui
+//* Desafio 4
+function concatName(array) {
+  return `${array[array.length - 1]}, ${array[0]}`;
 }
 
 // Desafio 5
