@@ -7,9 +7,9 @@ function compareTrue(value1, value2) {
   };
 }
 
-// Desafio 2
-function calcArea() {
-  // seu código aqui
+//* Desafio 2
+function calcArea(base, height) {
+  return base * height * 0.5;
 }
 
 // Desafio 3
