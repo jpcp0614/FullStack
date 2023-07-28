@@ -48,19 +48,16 @@ return `(${ddd}) ${prefix}-${number}`;
 }
 
 
-// Desafio 12
-function triangleCheck() {
-  // seu código aqui
-}
-
-// Desafio 13
-function hydrate() {
-  // seu código aqui
+//* Desafio 12
+function triangleCheck(lineA, lineB, lineC) {
+    function isValidTriangle(a , b, c) {
+      return a + b > c && a + c > b && b + c > a
+    }
+    return isValidTriangle(lineA, lineB, lineC)
 }
 
 module.exports = {
   generatePhoneNumber,
-  techList,
-  hydrate,
+  techList,  
   triangleCheck,
 };
