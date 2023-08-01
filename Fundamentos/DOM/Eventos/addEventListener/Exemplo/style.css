@@ -35,6 +35,11 @@ h1 {
   color: #2fc18c;
 }
 
+h3 {
+  font-size: 48px;
+  color: white;
+}
+
 .container li:nth-of-type(1) {
   background-color: #2fc18c;
   color: #333;

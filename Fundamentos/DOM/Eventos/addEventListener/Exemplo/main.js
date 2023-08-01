@@ -44,8 +44,16 @@ myWebpage.addEventListener('dblclick', () => {
 
 
 
-// 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotify', altere
-// a cor do mesmo.
+//* 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotify', altere
+//* a cor do mesmo.
+
+myWebpage.addEventListener('mouseover', (event) => {
+  event.target.style.color = 'blue';
+})
+
+myWebpage.addEventListener('mouseout', (event) => {
+  event.target.style.color = 'white';
+})
 
 // Segue abaixo um exemplo de uso do event.target.
 
@@ -58,6 +66,3 @@ const resetText = (event) => {
 
 firstLi.addEventListener('dblclick', resetText);
 
-// Não precisa passar o parâmetro dentro da callback resetText. O próprio
-// navegador fará esse trabalho por você, não é legal? Desse jeito, o
-// event.target na função retornará o objeto 'firstLi'.
