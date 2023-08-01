@@ -24,8 +24,16 @@ secondLi.addEventListener('click', handleChangeTech);
 thirdLi.addEventListener('click', handleChangeTech);
 
 
-// 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
-// com a classe 'tech'.
+//* 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
+//* com a classe 'tech'.
+
+input.addEventListener('input', (e) => {
+  let tech = document.querySelector('.tech');
+  tech.innerText = e.target.value;
+  // console.log("TARGET:", e.target);
+  // console.log("VALUE:", e.target.value);
+});
+
 
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotify',
 // redirecione para alguma página.
