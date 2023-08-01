@@ -15,7 +15,7 @@ const myWebpage = document.getElementById('my-spotify');
 const handleChangeTech = (event) => {
   let techClass = document.querySelector('.tech');
   techClass.classList.remove('tech');
-  event.target.classList.add('tech');
+  event.target.classList.add('tech');//* 4.1. Que tal redirecionar para seu portfólio? Dica: Lembre-se dos métodos `window.location.replace` e `window.open`.
 
 };
 
@@ -35,12 +35,25 @@ input.addEventListener('input', (e) => {
 });
 
 
-// 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotify',
-// redirecione para alguma página.
-// 4.1. Que tal redirecionar para seu portfólio? Dica: Lembre-se dos métodos `window.location.replace` e `window.open`.
+//* 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotify',
+//* redirecione para alguma página.
 
-// 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotify', altere
-// a cor do mesmo.
+myWebpage.addEventListener('dblclick', () => {
+  window.location.replace("https://google.com.br");
+})
+
+
+
+//* 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotify', altere
+//* a cor do mesmo.
+
+myWebpage.addEventListener('mouseover', (event) => {
+  event.target.style.color = 'blue';
+})
+
+myWebpage.addEventListener('mouseout', (event) => {
+  event.target.style.color = 'white';
+})
 
 // Segue abaixo um exemplo de uso do event.target.
 
@@ -53,6 +66,3 @@ const resetText = (event) => {
 
 firstLi.addEventListener('dblclick', resetText);
 
-// Não precisa passar o parâmetro dentro da callback resetText. O próprio
-// navegador fará esse trabalho por você, não é legal? Desse jeito, o
-// event.target na função retornará o objeto 'firstLi'.
