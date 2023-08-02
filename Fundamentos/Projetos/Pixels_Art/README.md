@@ -165,7 +165,7 @@ Neste projeto, você implementará um editor de arte com pixels.
 
 - A cor de fundo de cada elemento da paleta deverá ser a cor que o elemento representa. **A única cor não permitida na paleta é a cor branca.**;
 
-- Cada elemento da paleta de cores deverá ter uma borda preta, sólida e com 1 pixel de largura;
+- Cada elemento da paleta de cores deverá ter uma borda preta, sólida e com 2 pixel de largura;
 
 - A paleta de cores deverá listar todas as cores disponíveis para utilização lado a lado, e deverá ser posicionada abaixo do título "Paleta de Cores";
 
