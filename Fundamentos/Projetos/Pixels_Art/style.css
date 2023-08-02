@@ -1,0 +1,22 @@
+.color {
+  border: solid 2px black;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}
+
+.black {
+  background-color: black;
+}
+
+.cyan {
+  background-color: cyan;
+}
+
+.khaki {
+  background-color: khaki;
+}
+
+.orange {
+  background-color: orange;
+}

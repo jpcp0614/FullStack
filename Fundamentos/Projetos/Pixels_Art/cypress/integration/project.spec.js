@@ -54,11 +54,11 @@ describe('2 - Adicione à página uma paleta de quatro cores distintas.', () => 
       });
   });
 
-  it('Verifica se cada elemento da paleta de cores tem uma borda preta, sólida e com 1 pixel de largura;', () => {
+  it('Verifica se cada elemento da paleta de cores tem uma borda preta, sólida e com 2 pixel de largura;', () => {
     cy.get('.color')
       .each((color) => {
         cy.wrap(color)
-          .and('have.css', 'border', `1px solid ${BLACK}`)
+          .and('have.css', 'border', `2px solid ${BLACK}`)
           .and('have.class', 'color');
       });
   });
