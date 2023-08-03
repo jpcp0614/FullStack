@@ -3,6 +3,7 @@
   display: inline-block;
   height: 80px;
   width: 80px;
+  margin-bottom: 50px;
 }
 
 .black {
@@ -19,4 +20,18 @@
 
 .orange {
   background-color: orange;
+}
+
+#pixel-board {
+  width: 250px;
+}
+
+/** Requisito 05 */
+.pixel {
+  background-color: white;
+  border: solid 1px black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
 }
