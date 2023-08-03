@@ -28,4 +28,28 @@ for (const color of colors) {
   document.querySelector('#color-palette').appendChild(div);
 };
 
+//* -----------------------------------------------
 
+//* Cria uma <div> Board com a class 'pixel-board'
+const divBoard = document.createElement('div');
+divBoard.classList.add('pixel-board');
+document.body.appendChild(divBoard);
+
+//* Laço for para criar as 25 <div>
+for (let i = 1; i <= 25; i++) {
+  //* Cria a <div> com class 'pixel'
+  const divElement = document.createElement('div');
+  divElement.classList.add('pixel');
+
+  //* Adiciona a <div> pixel a <div> Board
+  divBoard.appendChild(divElement);
+
+  /*
+  //* Acrescenta uma tag <br> a cada 5 <div> pixel
+  if (i % 5 === 0) {
+    divBoard.appendChild(document.createElement('br'));
+  }
+  */
+}
+
+//* --------------------------------------------------
