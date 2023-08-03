@@ -3,15 +3,27 @@
   --color-div-cyan: cyan;
   --color-div-khaki: khaki;
   --color-div-orange: orange;
+
+  --border: 1px solid black;
+}
+
+#color-palette {
+  margin-bottom: 20px;
 }
 
 .color {
-  border: 1px solid black;
+  border: var(--border);
   display: inline-block;
-  margin-right: 2px;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  margin-right: 4px;
+  transition: 0.2s;
+  width: 40px;
 }
+
+.color:hover {
+  transform: scale(1.1);
+}
+
 
 .black {
   background-color: var(--color-div-black);
@@ -27,4 +39,18 @@
 
 .orange {
   background-color: var(--color-div-orange);
+}
+
+.pixel-board {
+  width: 250px;
+}
+
+.pixel {
+  background-color: white;
+  border: var(--border);
+  box-sizing:content-box;
+  display: inline-block;
+  height: 40px;
+  margin-right: 4px;
+  width: 40px;
 }
