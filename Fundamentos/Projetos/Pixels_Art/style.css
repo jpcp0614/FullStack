@@ -1,37 +1,61 @@
-.color {
-  border: solid 2px black;
-  display: inline-block;
-  height: 80px;
-  width: 80px;
-  margin-bottom: 50px;
+:root {
+
+  --color-div-black: black;
+
+  --color-div-cyan: cyan;
+
+  --color-div-khaki: khaki;
+
+  --color-div-orange: orange;
+
+  --border: 1px solid black;
 }
 
+#color-palette {
+  margin-bottom: 20px;
+}
+
+.color {
+  border: var(--border);
+  display: inline-block;
+  height: 40px;
+  margin-right: 4px;
+  transition: 0.2s;
+  width: 40px;
+}
+
+.color:hover {
+  transform: scale(1.1);
+}
+
+
 .black {
-  background-color: black;
+  background-color: var(--color-div-black);
 }
 
 .cyan {
-  background-color: cyan;
+  background-color: var(--color-div-cyan);
 }
 
 .khaki {
-  background-color: khaki;
+  background-color: var(--color-div-khaki);
 }
 
 .orange {
-  background-color: orange;
+  background-color: var(--color-div-orange);
 }
 
 #pixel-board {
-  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 210px;
+  width: 210px;
 }
 
-/** Requisito 05 */
 .pixel {
   background-color: white;
-  border: solid 1px black;
+  border: var(--border);
   display: inline-block;
-  width: 40px;
   height: 40px;
-  margin-right: 5px;
+  width: 40px;
 }

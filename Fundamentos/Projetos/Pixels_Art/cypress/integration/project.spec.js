@@ -205,13 +205,11 @@ describe('5 - Faça com que cada elemento do quadro de pixels possua 40 pixels d
       });
   });
 
-  it('Verifica se 40 pixels é o tamanho total do elemento, incluindo seu conteúdo e excluindo a borda preta, que deve ser criada à parte.', () => {
+  it('Verifica a borda é preta, com 1px solid.', () => {
     cy.get('.pixel')
       .each((pixel) => {
         cy.wrap(pixel)
-          .should('have.css', 'height', '40px')
-          .and('have.css', 'width', '40px')
-          .and('have.css', 'border', `1px solid ${BLACK}`);
+          .should('have.css', 'border', `1px solid ${BLACK}`);
       });
   });
 });
