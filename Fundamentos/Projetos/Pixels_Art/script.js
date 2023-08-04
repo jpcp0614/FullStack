@@ -7,3 +7,6 @@ for (let i = 1; i <= 25; i += 1) {
   div.classList.add('pixel');
   document.querySelector('#pixel-board').appendChild(div);
 }
+
+const selectedBlack = document.querySelector('.black');
+selectedBlack.classList.add('selected');
