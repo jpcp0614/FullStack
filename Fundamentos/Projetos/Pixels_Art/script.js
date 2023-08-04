@@ -26,3 +26,15 @@ function changeSelected(event) {
   selected.classList.remove('selected');
   event.target.classList.add('selected');
 }
+
+//* Requisito 8
+
+function selectedAndPrintPixel(event) {
+  const select = document.querySelector('.selected');
+  const selectedStyle = window.getComputedStyle(select);
+  const getBackgroundColor = selectedStyle.getPropertyValue('background-color');
+  event.target.style.backgroundColor = getBackgroundColor;
+}
+
+document.querySelector('#pixel-board').addEventListener('click', selectedAndPrintPixel);
+
