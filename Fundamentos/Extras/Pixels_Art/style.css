@@ -41,16 +41,17 @@
   background-color: var(--color-div-orange);
 }
 
-.pixel-board {
-  width: 250px;
+#pixel-board {
+  display: flex;
+  flex-wrap: wrap;
+  height: 210px;
+  width: 210px;
 }
 
 .pixel {
   background-color: white;
   border: var(--border);
-  box-sizing:content-box;
   display: inline-block;
   height: 40px;
-  margin-right: 4px;
   width: 40px;
 }
