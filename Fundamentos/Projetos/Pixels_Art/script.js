@@ -1,5 +1,6 @@
 const pixelBoardId = '#pixel-board';
 const pixelClass = '.pixel';
+const elementSection = document.querySelector('section');
 
 const divBoard = document.createElement('div');
 divBoard.id = 'pixel-board';
@@ -8,6 +9,7 @@ document.querySelector('section').appendChild(divBoard);
 for (let i = 1; i <= 25; i += 1) {
   const div = document.createElement('div');
   div.classList.add('pixel');
+  elementSection.style.maxWidth = `${5 * 45}px`;
   document.querySelector(pixelBoardId).appendChild(div);
 }
 
@@ -31,22 +33,34 @@ for (let i = 0; i < getAllColor.length; i += 1) {
 
 //* Requisito 8
 
+function selectSection() {
+  const pixelBoardAfterSection = document.querySelector(pixelBoardId);
+  const getStyleSection = window.getComputedStyle(pixelBoardAfterSection);
+  const getBackgroundColorSection = getStyleSection.getPropertyValue('background-color');
+
+  return getBackgroundColorSection;
+}
+
 function selectedAndPrintPixel(e) {
   const select = document.querySelector('.selected');
   const selectedStyle = window.getComputedStyle(select);
   const getBackgroundColor = selectedStyle.getPropertyValue('background-color');
   e.target.style.backgroundColor = getBackgroundColor;
+
+  if (selectSection() !== 'rgba(0, 0, 0, 0)') {
+    document.querySelector(pixelBoardId).style.backgroundColor = 'white';
+  }
 }
 
-document.querySelector(pixelBoardId).addEventListener('click', selectedAndPrintPixel);
+const elementDivPixelBoard = document.querySelector(pixelBoardId);
+elementDivPixelBoard.addEventListener('click', selectedAndPrintPixel);
 
 //* Requisito 9
 
 const clearButton = document.createElement('button');
 clearButton.id = 'clear-board';
 clearButton.textContent = 'Limpar';
-const pixelBoard = document.querySelector('section');
-pixelBoard.parentNode.insertBefore(clearButton, pixelBoard);
+elementSection.parentNode.insertBefore(clearButton, elementSection);
 
 function clearPixels() {
   const pixels = document.querySelectorAll(pixelClass);
@@ -62,14 +76,15 @@ clearButton.addEventListener('click', clearPixels);
 
 const divInputButton = document.createElement('div');
 divInputButton.id = 'input-button';
-const divSection = document.querySelector('section');
-divSection.parentNode.insertBefore(divInputButton, divSection);
+elementSection.parentNode.insertBefore(divInputButton, elementSection);
 
 // input
 const input = document.createElement('input');
 input.id = 'board-size';
 input.type = 'number';
 input.min = '1';
+input.autofocus = true;
+input.placeholder = 'Digite um valor';
 divInputButton.appendChild(input);
 
 // button
@@ -90,6 +105,7 @@ const makeBoard = (inputValue) => {
   for (let i = 1; i <= inputValue ** 2; i += 1) {
     const div = document.createElement('div');
     div.classList.add('pixel');
+    elementSection.style.maxWidth = `${inputValue * 42}px`;
     document.querySelector(pixelBoardId).appendChild(div);
   }
 };
@@ -98,14 +114,15 @@ const makeBoard = (inputValue) => {
 
 //* cria um novo quadro
 const createNewBoard = () => {
-  //* input.value === '' é a mesma coisa que !input.value
   if (input.value === '') alert('Board inválido!');
-  if (input.value <= 5) {
+  if (input.value < 5) {
     deleteBoard();
     makeBoard(5);
-  } else if (input.value >= 50) {
+    input.value = '5';
+  } else if (input.value > 50) {
     deleteBoard();
     makeBoard(50);
+    input.value = '50';
   } else {
     deleteBoard();
     makeBoard(input.value);
