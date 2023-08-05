@@ -94,11 +94,19 @@ const makeBoard = (inputValue) => {
   }
 };
 
+//* Requisito bônus 11
+
 //* cria um novo quadro
 const createNewBoard = () => {
   //* input.value === '' é a mesma coisa que !input.value
   if (input.value === '') alert('Board inválido!');
-  if (input.value >= 5 && input.value <= 50) {
+  if (input.value <= 5) {
+    deleteBoard();
+    makeBoard(5);
+  } else if (input.value >= 50) {
+    deleteBoard();
+    makeBoard(50);
+  } else {
     deleteBoard();
     makeBoard(input.value);
   }
