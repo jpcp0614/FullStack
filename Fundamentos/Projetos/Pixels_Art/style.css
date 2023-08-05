@@ -48,8 +48,7 @@
 #pixel-board {
   display: flex;
   flex-wrap: wrap;
-  height: 210px;
-  width: 210px;
+
 }
 
 .pixel {
@@ -62,4 +61,8 @@
 
 button {
   margin-bottom: 10px;
+}
+
+#generate-board {
+  margin-left: 5px;
 }
