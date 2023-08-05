@@ -283,7 +283,7 @@ Neste projeto, você implementará um editor de arte com pixels.
 
 - O input só deve aceitar número maiores que zero. Essa restrição **deve** ser feita usando os atributos do elemento `input`;
 
-- O botão deve conter o texto "VQV";
+- O botão deve conter o texto "Criar";
 
 - O input deve estar posicionado entre a paleta de cores e o quadro de pixels;
 
@@ -301,7 +301,7 @@ Neste projeto, você implementará um editor de arte com pixels.
 
 - Verifica se o input só aceita número maiores que zero. Essa restrição deve ser feita usando os atributos do elemento `input`
 
-- Verifica se o botão contém o texto \'VQV\'
+- Verifica se o botão contém o texto \'Criar\'
 
 - Verifica se o input está posicionado entre a paleta de cores e o quadro de pixels
 
