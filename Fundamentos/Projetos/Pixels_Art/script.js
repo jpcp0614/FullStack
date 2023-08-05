@@ -13,44 +13,43 @@ for (let i = 1; i <= 25; i += 1) {
 const selectedBlack = document.querySelector('.black');
 selectedBlack.classList.add('selected');
 
-
 //* Requisito 7
-
-const getAllColor = document.querySelectorAll('.color');
-for (let i = 0; i < getAllColor.length; i++) {
-  getAllColor[i].addEventListener('click', changeSelected);
-}
 
 function changeSelected(event) {
   const selected = document.querySelector('.selected');
   selected.classList.remove('selected');
-  event.target.classList.add('selected');  
+  event.target.classList.add('selected');
 }
 
-//* Requisito 8 
+const getAllColor = document.querySelectorAll('.color');
+for (let i = 0; i < getAllColor.length; i += 1) {
+  getAllColor[i].addEventListener('click', changeSelected);
+}
 
-function selectedAndPrintPixel(event) {
+//* Requisito 8
+
+function selectedAndPrintPixel(e) {
   const select = document.querySelector('.selected');
   const selectedStyle = window.getComputedStyle(select);
   const getBackgroundColor = selectedStyle.getPropertyValue('background-color');
-  event.target.style.backgroundColor = getBackgroundColor;
+  e.target.style.backgroundColor = getBackgroundColor;
 }
 
 document.querySelector('#pixel-board').addEventListener('click', selectedAndPrintPixel);
 
-
-//* Requisito 9 
+//* Requisito 9
 
 const clearButton = document.createElement('button');
 clearButton.id = 'clear-board';
 clearButton.textContent = 'Limpar';
 const pixelBoard = document.querySelector('section');
-pixelBoard.parentNode.insertBefore(clearButton, pixelBoard)
+pixelBoard.parentNode.insertBefore(clearButton, pixelBoard);
 
-function clearPixels(){
+function clearPixels() {
   const pixels = document.querySelectorAll('.pixel');
-  for (let pixel of pixels){
-    pixel.style.backgroundColor = 'white';
+
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
   }
 }
 
