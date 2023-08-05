@@ -113,3 +113,27 @@ const createNewBoard = () => {
 };
 
 btn.addEventListener('click', createNewBoard);
+
+// * Requisito 12
+
+const randomGenerateColor = () => {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return `rgb(${r},${g},${b})`;
+};
+
+const changeColors = () => {
+  const colorPalette = document.querySelectorAll('.color');
+  for (let i = 0; i < colorPalette.length; i += 1) {
+    if (colorPalette[i].classList[2] === 'selected') {
+      colorPalette[0].style.backgroundColor = 'black';
+    } else {
+      colorPalette[i].style.backgroundColor = randomGenerateColor();
+    }
+  }
+};
+
+window.onload = () => {
+  changeColors();
+};
