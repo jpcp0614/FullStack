@@ -24,10 +24,10 @@ for (let i = 0; i < getAllColor.length; i++) {
 function changeSelected(event) {
   const selected = document.querySelector('.selected');
   selected.classList.remove('selected');
-  event.target.classList.add('selected');
+  event.target.classList.add('selected');  
 }
 
-//* Requisito 8
+//* Requisito 8 
 
 function selectedAndPrintPixel(event) {
   const select = document.querySelector('.selected');
@@ -38,3 +38,20 @@ function selectedAndPrintPixel(event) {
 
 document.querySelector('#pixel-board').addEventListener('click', selectedAndPrintPixel);
 
+
+//* Requisito 9 
+
+const clearButton = document.createElement('button');
+clearButton.id = 'clear-board';
+clearButton.textContent = 'Limpar';
+const pixelBoard = document.querySelector('section');
+pixelBoard.parentNode.insertBefore(clearButton, pixelBoard)
+
+function clearPixels(){
+  const pixels = document.querySelectorAll('.pixel');
+  for (let pixel of pixels){
+    pixel.style.backgroundColor = 'white';
+  }
+}
+
+clearButton.addEventListener('click', clearPixels);
