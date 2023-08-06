@@ -28,7 +28,7 @@
   transform: scale(1.1);
 }
 
-
+/** ---------- Requisito 03 ---------- */
 .black {
   background-color: var(--color-div-black);
 }
@@ -51,6 +51,7 @@
   margin: 0 auto;
 }
 
+/** ---------- Requisito 05 ---------- */
 .pixel {
   background-color: white;
   border: var(--border);
