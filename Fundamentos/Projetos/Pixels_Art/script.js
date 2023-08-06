@@ -1,139 +1,227 @@
-const pixelBoardId = '#pixel-board';
-const pixelClass = '.pixel';
+//* ids
+const COLOR_PALETTE_ID = '#color-palette';
+const INPUT_BUTTON_ID = '#input-button';
+const PIXEL_BOARD_ID = '#pixel-board';
+const SECTION_ID = '#section-id';
 
-const divBoard = document.createElement('div');
-divBoard.id = 'pixel-board';
-document.querySelector('section').appendChild(divBoard);
+//* classes
+const BLACK_CLASS = '.black';
+const COLOR_CLASS = '.color';
+const PIXEL_CLASS = '.pixel';
+const SELECTED_CLASS = '.selected';
 
-for (let i = 1; i <= 25; i += 1) {
-  const div = document.createElement('div');
-  div.classList.add('pixel');
-  document.querySelector(pixelBoardId).appendChild(div);
+//* ---------- Requisito 01 ----------
+// cria o header e adiciona no body
+const header = document.createElement('header');
+const headerInBody = document.body.appendChild(header);
+
+// cria o h1 e adiciona no header
+const h1 = document.createElement('h1');
+h1.id = 'title';
+h1.textContent = 'Paleta de Cores';
+headerInBody.appendChild(h1);
+
+//* ---------- Requisito 02 ----------
+// cria a div e adiciona no body
+const divColorPalette = document.createElement('div');
+divColorPalette.id = 'color-palette';
+document.body.appendChild(divColorPalette);
+
+const arrColors = ['black', 'cyan', 'khaki', 'orange'];
+
+// cria div com classe 'color' e as classes de cor
+// através do array de cores
+// e adiciona tal div na color-palette
+for (let i = 0; i < arrColors.length; i += 1) {
+  const divColors = document.createElement('div');
+  divColors.classList.add('color');
+  divColors.classList.add(arrColors[i]);
+  document.querySelector(COLOR_PALETTE_ID).appendChild(divColors);
 }
 
-//* Requisito 6
+//* ---------- Requisito 04 ----------
+// cria o section e adiciona no body
+const section = document.createElement('section');
+section.id = 'section-id';
+document.body.appendChild(section);
 
-const selectedBlack = document.querySelector('.black');
-selectedBlack.classList.add('selected');
+// cria div pixel-board e adiciona na section
+const divPixelBoard = document.createElement('div');
+divPixelBoard.id = 'pixel-board';
+document.querySelector(SECTION_ID).appendChild(divPixelBoard);
 
-//* Requisito 7
+// cria div com classe 'pixel' adicionando na div pixel-board (quadro)
+for (let i = 0; i < 25; i += 1) {
+  const divPixel = document.createElement('div');
+  divPixel.classList.add('pixel');
+  document.querySelector(SECTION_ID).style.maxWidth = `${5 * 42}px`; // limitar o tamanho da section (CSS)
+  document.querySelector(PIXEL_BOARD_ID).appendChild(divPixel);
+}
 
-function changeSelected(event) {
-  const selected = document.querySelector('.selected');
+//* ---------- Requisito 06 ----------
+// adiciona a classe 'selected' no elemento com classe 'black'
+const selectColorBlack = document.querySelector(BLACK_CLASS);
+selectColorBlack.classList.add('selected');
+
+//* ---------- Requisito 07 ----------
+// ao clicar no elemento AZUL
+// remove a classe 'selected' do elemento PRETO (classList.remove)
+// e cria a classe 'selected' no elemento AZUL (e.target.classList.add)
+const selectColorInPalette = (e) => {
+  const selected = document.querySelector(SELECTED_CLASS);
   selected.classList.remove('selected');
-  event.target.classList.add('selected');
+  e.target.classList.add('selected');
+};
+
+// alternar a classe 'selected' entre os elementos
+const selectAllColors = document.querySelectorAll(COLOR_CLASS);
+for (let i = 0; i < selectAllColors.length; i += 1) {
+  selectAllColors[i].addEventListener('click', selectColorInPalette);
 }
 
-const getAllColor = document.querySelectorAll('.color');
-for (let i = 0; i < getAllColor.length; i += 1) {
-  getAllColor[i].addEventListener('click', changeSelected);
-}
+//* ---------- Requisito 08 ----------
+// para não deixar colorido o fundo do quadro
+// quando clicamos na área fora dos pixel's
+// recuperei o 'background-color' do '#pixel-board'
+const checkBackgroundColorInSection = () => {
+  const elementPixelBoard = document.querySelector(PIXEL_BOARD_ID);
+  const pixelBoardStyle = window.getComputedStyle(elementPixelBoard);
+  // aqui vai retornar justamente a cor do background
+  return pixelBoardStyle.getPropertyValue('background-color');
+};
 
-//* Requisito 8
+// selecionar a classe 'selected'
+// através do getComputedStyle eu pego todos os estilos do elemento
+// usando o getPropertyValue eu tenho acesso ao 'background-color'
+// onde eu clicar, vai atualizar para a cor do 'selected' (e.target)
+const paintPixel = (e) => {
+  const selected = document.querySelector(SELECTED_CLASS);
+  const selectStyle = window.getComputedStyle(selected);
+  const selectBackgroundColor = selectStyle.getPropertyValue('background-color');
+  e.target.style.backgroundColor = selectBackgroundColor;
 
-function selectedAndPrintPixel(e) {
-  const select = document.querySelector('.selected');
-  const selectedStyle = window.getComputedStyle(select);
-  const getBackgroundColor = selectedStyle.getPropertyValue('background-color');
-  e.target.style.backgroundColor = getBackgroundColor;
-}
+  // caso a cor de fundo do '#pixel-board' não for branca
+  // eu atualizo novamente para branco
+  if (checkBackgroundColorInSection() !== 'rgba(0, 0, 0, 0)') {
+    document.querySelector(PIXEL_BOARD_ID).style.backgroundColor = 'white';
+  }
+};
 
-document.querySelector(pixelBoardId).addEventListener('click', selectedAndPrintPixel);
+// clicar no quadro de pixels
+const pixelBoard = document.querySelector(PIXEL_BOARD_ID);
+pixelBoard.addEventListener('click', paintPixel);
 
-//* Requisito 9
-
+//* ---------- Requisito 09 ----------
+// cria um botão com id e texto
+// que foi adicionado antes do elemento '#pixel-board'
 const clearButton = document.createElement('button');
 clearButton.id = 'clear-board';
 clearButton.textContent = 'Limpar';
-const pixelBoard = document.querySelector('section');
-pixelBoard.parentNode.insertBefore(clearButton, pixelBoard);
+const elementSection = document.querySelector(SECTION_ID);
+elementSection.parentNode.insertBefore(clearButton, elementSection);
 
-function clearPixels() {
-  const pixels = document.querySelectorAll(pixelClass);
+// função para limpar todos os pixels usando laço for
+const clearPixels = () => {
+  const pixels = document.querySelectorAll(PIXEL_CLASS);
 
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = 'white';
   }
-}
+};
 
 clearButton.addEventListener('click', clearPixels);
 
-//* Requisito bônus 10
-
-const divInputButton = document.createElement('div');
-divInputButton.id = 'input-button';
-const divSection = document.querySelector('section');
-divSection.parentNode.insertBefore(divInputButton, divSection);
+//* ----- Requisito bônus 10 e 11 -----
+// criar uma div '#board-size' e adicioná-la antes da section
+const divForInputAndButton = document.createElement('div');
+divForInputAndButton.id = 'input-button';
+const sectionElement = document.querySelector(SECTION_ID);
+sectionElement.parentNode.insertBefore(divForInputAndButton, sectionElement);
 
 // input
 const input = document.createElement('input');
 input.id = 'board-size';
 input.type = 'number';
 input.min = '1';
-divInputButton.appendChild(input);
+input.autofocus = true;
+input.placeholder = 'Digite um valor aqui';
+divForInputAndButton.appendChild(input);
 
 // button
 const btn = document.createElement('button');
 btn.id = 'generate-board';
 btn.textContent = 'Criar';
-divInputButton.appendChild(btn);
+divForInputAndButton.appendChild(btn);
 
-//* apaga o quadro inicial
+// deletar o quadro inicial
 const deleteBoard = () => {
-  const boardPixels = document.querySelectorAll(pixelClass);
+  const boardPixels = document.querySelectorAll(PIXEL_CLASS);
   for (let i = 0; i < boardPixels.length; i += 1) {
     boardPixels[i].remove();
   }
 };
 
+// construir quadro, de acordo com o valor do input
 const makeBoard = (inputValue) => {
   for (let i = 1; i <= inputValue ** 2; i += 1) {
-    const div = document.createElement('div');
-    div.classList.add('pixel');
-    document.querySelector(pixelBoardId).appendChild(div);
+    const divPixels = document.createElement('div');
+    divPixels.classList.add('pixel');
+    document.querySelector(SECTION_ID).style.maxWidth = `${inputValue * 42}px`;
+    document.querySelector(PIXEL_BOARD_ID).appendChild(divPixels);
   }
 };
 
-//* Requisito bônus 11
-
-//* cria um novo quadro
-const createNewBoard = () => {
-  //* input.value === '' é a mesma coisa que !input.value
+// Checagem para criar o novo quadro
+const checkAndCreateNewBoard = () => {
   if (input.value === '') alert('Board inválido!');
-  if (input.value <= 5) {
+  if (input.value < 5) {
     deleteBoard();
     makeBoard(5);
-  } else if (input.value >= 50) {
+    input.value = '5';
+  } else if (input.value > 50) {
     deleteBoard();
     makeBoard(50);
+    input.value = '50';
   } else {
     deleteBoard();
     makeBoard(input.value);
   }
 };
 
-btn.addEventListener('click', createNewBoard);
+btn.addEventListener('click', checkAndCreateNewBoard);
 
-// * Requisito 12
-
-const randomGenerateColor = () => {
+//* ------- Requisito bônus 12 -------
+// função para gerar cores em rgb de forma aleatória
+const generateRGB = () => {
   const r = Math.floor(Math.random() * 255);
   const g = Math.floor(Math.random() * 255);
   const b = Math.floor(Math.random() * 255);
-  return `rgb(${r},${g},${b})`;
+  return `rgb(${r}, ${g}, ${b})`;
 };
 
-const changeColors = () => {
-  const colorPalette = document.querySelectorAll('.color');
+// lógica para mudar as cores, mantendo
+// o primeiro pixel com a cor preta
+// colorPalette[0] -> retorna a primeira div do array
+// colorPalette[0].classList[2] -> retorna a classe que eu preciso 'selected'
+const changeColorsPalette = () => {
+  const colorPalette = document.querySelectorAll(COLOR_CLASS);
   for (let i = 0; i < colorPalette.length; i += 1) {
     if (colorPalette[i].classList[2] === 'selected') {
       colorPalette[0].style.backgroundColor = 'black';
     } else {
-      colorPalette[i].style.backgroundColor = randomGenerateColor();
+      colorPalette[i].style.backgroundColor = generateRGB();
     }
   }
 };
 
-window.onload = () => {
-  changeColors();
-};
+// quando a página atualiza
+changeColorsPalette();
+
+//* Mudar as cores sem atualizar a página
+const btnChange = document.createElement('button');
+btnChange.id = 'btn-change';
+btnChange.textContent = 'Mudar as cores';
+const inputButton = document.querySelector(INPUT_BUTTON_ID);
+inputButton.parentNode.insertBefore(btnChange, inputButton);
+
+btnChange.addEventListener('click', changeColorsPalette);

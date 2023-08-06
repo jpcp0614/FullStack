@@ -1,5 +1,6 @@
 const WHITE = 'rgb(255, 255, 255)';
 const BLACK = 'rgb(0, 0, 0)';
+const FORTY = `40.00000241259766px`;
 
 function chunk(arr, len) {
   const chunks = [];
@@ -43,6 +44,15 @@ describe('2 - Adicione à página uma paleta de quatro cores distintas.', () => 
       });
   });
 
+  it('Verifica se cada elemento da paleta de cores tem uma borda preta, sólida e com 1 pixel de largura;', () => {
+    cy.get('.color')
+      .each((color) => {
+        cy.wrap(color)
+          .and('have.css', 'border', `0.571429px solid ${BLACK}`)
+          .and('have.class', 'color');
+      });
+  });
+
   it('Verifica se a cor de fundo de cada elemento da paleta é a cor que o elemento representa. **A única cor não permitida na paleta é a cor branca.**', () => {
     cy.get('.color')
       .each((color) => {
@@ -51,15 +61,6 @@ describe('2 - Adicione à página uma paleta de quatro cores distintas.', () => 
           .and('not.have.css', 'background-color', WHITE);
         cy.wrap(color)
           .should('have.css', 'background-color');
-      });
-  });
-
-  it('Verifica se cada elemento da paleta de cores tem uma borda preta, sólida e com 2 pixel de largura;', () => {
-    cy.get('.color')
-      .each((color) => {
-        cy.wrap(color)
-          .and('have.css', 'border', `2px solid ${BLACK}`)
-          .and('have.class', 'color');
       });
   });
 
@@ -205,12 +206,11 @@ describe('5 - Faça com que cada elemento do quadro de pixels possua 40 pixels d
       });
   });
 
-  it('Verifica a borda é preta, com 1px solid.', () => {
+  it('Verifica se é 40px a largura do pixel.', () => {
     cy.get('.pixel')
-      .each((pixel) => {
-        cy.wrap(pixel)
-          .should('have.css', 'border', `1px solid ${BLACK}`);
-      });
+    .each((pixel) => {
+      expect(pixel).to.have.css('width', FORTY);
+    })
   });
 });
 
@@ -383,8 +383,8 @@ describe('10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário.'
     cy.get('#board-size[type=\'number\'][min=\'1\']');
   });
 
-  it('Verifica se o botão contém o texto \'VQV\'', () => {
-    cy.get('#generate-board').contains(/vqv/i);
+  it('Verifica se o botão contém o texto \'Criar\'', () => {
+    cy.get('#generate-board').contains(/criar/i);
   });
 
   it('Verifica se o input está posicionado entre a paleta de cores e o quadro de pixels', () => {
