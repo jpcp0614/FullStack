@@ -1,22 +1,61 @@
 :root {
 
-  --color-div-black: black;
+  --color-black: black;
 
-  --color-div-cyan: cyan;
+  --color-cyan: cyan;
 
-  --color-div-khaki: khaki;
+  --color-khaki: khaki;
 
-  --color-div-orange: orange;
+  --color-orange: orange;
+
+  --color-darkBlue: #060121;
+
+  --color-lightGreen: #9fd86b;
 
   --border: 1px solid black;
+
+  --font: 'Roboto', sans-serif, helvetica;
+}
+
+* {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  align-items: center;
+  background-color: var(--color-darkBlue);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 50px;
+}
+
+h1 {
+  background-color: var(--color-darkBlue);
+  color: var(--color-lightGreen);
+  font-family: var(--font);
+  font-weight: 400;
 }
 
 #color-palette {
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#section-id {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 50px;
 }
 
 .color {
   border: var(--border);
+  cursor: pointer;
   display: inline-block;
   height: 40px;
   margin-right: 4px;
@@ -30,19 +69,19 @@
 
 /** ---------- Requisito 03 ---------- */
 .black {
-  background-color: var(--color-div-black);
+  background-color: var(--color-black);
 }
 
 .cyan {
-  background-color: var(--color-div-cyan);
+  background-color: var(--color-cyan);
 }
 
 .khaki {
-  background-color: var(--color-div-khaki);
+  background-color: var(--color-khaki);
 }
 
 .orange {
-  background-color: var(--color-div-orange);
+  background-color: var(--color-orange);
 }
 
 #pixel-board {
@@ -59,10 +98,89 @@
   width: 40px;
 }
 
-button {
-  margin-bottom: 10px;
+#clear-board {
+  align-items: center;
+  background-color: var(--color-darkBlue);
+  border: 2px solid var(--color-darkBlue);
+  color: var(--color-lightGreen);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font);
+  height: 30px;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 auto;
+  transition: 0.3s;
+  width: 70px;
+}
+
+#clear-board:hover {
+  background-color: transparent;
+  color: var(--color-darkBlue);
+}
+
+#input-button {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2px 5px;
 }
 
 #generate-board {
-  margin-left: 5px;
+  align-items: center;
+  background-color: var(--color-darkBlue);
+  border: 2px solid var(--color-darkBlue);
+  color: var(--color-lightGreen);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font);
+  height: 30px;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  width: 70px;
+}
+
+#generate-board:hover {
+  background-color: transparent;
+  color: var(--color-darkBlue);
+}
+
+#board-size {
+  border: 2px solid var(--color-darkBlue);
+  border-radius: 3px;
+  color: var(--color-darkBlue);
+  display: flex;
+  justify-content: center;
+  font-family: var(--font);
+  margin: 10px;
+  margin-bottom: 10px;
+  padding-left: 3px;
+  width: 200px;
+}
+
+#btn-change {
+  align-items: center;
+  background-color: var(--color-darkBlue);
+  border: 2px solid var(--color-darkBlue);
+  color: var(--color-lightGreen);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font);
+  height: 30px;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  transition: 0.3s;
+  width: 120px;
+}
+
+#btn-change:hover {
+  background-color: transparent;
+  color: var(--color-darkBlue);
 }
