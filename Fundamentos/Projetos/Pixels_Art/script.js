@@ -10,6 +10,8 @@ const COLOR_CLASS = '.color';
 const PIXEL_CLASS = '.pixel';
 const SELECTED_CLASS = '.selected';
 
+const BACKGROUND_COLOR = 'background-color';
+
 //* ---------- Requisito 01 ----------
 // cria o header e adiciona no body
 const header = document.createElement('header');
@@ -87,7 +89,7 @@ const checkBackgroundColorInSection = () => {
   const elementPixelBoard = document.querySelector(PIXEL_BOARD_ID);
   const pixelBoardStyle = window.getComputedStyle(elementPixelBoard);
   // aqui vai retornar justamente a cor do background
-  return pixelBoardStyle.getPropertyValue('background-color');
+  return pixelBoardStyle.getPropertyValue(BACKGROUND_COLOR);
 };
 
 // selecionar a classe 'selected'
@@ -97,7 +99,7 @@ const checkBackgroundColorInSection = () => {
 const paintPixel = (e) => {
   const selected = document.querySelector(SELECTED_CLASS);
   const selectStyle = window.getComputedStyle(selected);
-  const selectBackgroundColor = selectStyle.getPropertyValue('background-color');
+  const selectBackgroundColor = selectStyle.getPropertyValue(BACKGROUND_COLOR);
   e.target.style.backgroundColor = selectBackgroundColor;
 
   // caso a cor de fundo do '#pixel-board' não for branca
@@ -225,3 +227,20 @@ const inputButton = document.querySelector(INPUT_BUTTON_ID);
 inputButton.parentNode.insertBefore(btnChange, inputButton);
 
 btnChange.addEventListener('click', changeColorsPalette);
+
+//* Selecionando um pixel já colorido, remove sua cor com duplo clique
+const getPixelColored = (e) => {
+  const coloredPixelClass = document.querySelectorAll(PIXEL_CLASS);
+
+  for (let i = 0; i < coloredPixelClass.length; i += 1) {
+    const myPixels = coloredPixelClass[i].style.backgroundColor;
+    if (myPixels !== 'rgb(0, 0, 0)') {
+      e.target.style.backgroundColor = 'white';
+    }
+  }
+};
+
+const coloredPixel = document.querySelectorAll(PIXEL_CLASS);
+for (let i = 0; i < coloredPixel.length; i += 1) {
+  coloredPixel[i].addEventListener('dblclick', getPixelColored);
+}
