@@ -1,5 +1,6 @@
 //* ids
 const COLOR_PALETTE_ID = '#color-palette';
+const INPUT_BUTTON_ID = '#input-button';
 const PIXEL_BOARD_ID = '#pixel-board';
 const SECTION_ID = '#section-id';
 
@@ -202,11 +203,25 @@ const generateRGB = () => {
 // o primeiro pixel com a cor preta
 // colorPalette[0] -> retorna a primeira div do array
 // colorPalette[0].classList[2] -> retorna a classe que eu preciso 'selected'
-const colorPalette = document.querySelectorAll(COLOR_CLASS);
-for (let i = 0; i < colorPalette.length; i += 1) {
-  if (colorPalette[i].classList[2] === 'selected') {
-    colorPalette[0].style.backgroundColor = 'black';
-  } else {
-    colorPalette[i].style.backgroundColor = generateRGB();
+const changeColorsPalette = () => {
+  const colorPalette = document.querySelectorAll(COLOR_CLASS);
+  for (let i = 0; i < colorPalette.length; i += 1) {
+    if (colorPalette[i].classList[2] === 'selected') {
+      colorPalette[0].style.backgroundColor = 'black';
+    } else {
+      colorPalette[i].style.backgroundColor = generateRGB();
+    }
   }
-}
+};
+
+// quando a página atualiza
+changeColorsPalette();
+
+//* Mudar as cores sem atualizar a página
+const btnChange = document.createElement('button');
+btnChange.id = 'btn-change';
+btnChange.textContent = 'Mudar as cores';
+const inputButton = document.querySelector(INPUT_BUTTON_ID);
+inputButton.parentNode.insertBefore(btnChange, inputButton);
+
+btnChange.addEventListener('click', changeColorsPalette);
