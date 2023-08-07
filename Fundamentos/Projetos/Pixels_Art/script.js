@@ -91,7 +91,7 @@ const checkBackgroundColorInSection = () => {
   // aqui vai retornar justamente a cor do background
   return pixelBoardStyle.getPropertyValue(BACKGROUND_COLOR);
 };
-
+console.log(checkBackgroundColorInSection())
 // selecionar a classe 'selected'
 // através do getComputedStyle eu pego todos os estilos do elemento
 // usando o getPropertyValue eu tenho acesso ao 'background-color'
@@ -104,7 +104,7 @@ const paintPixel = (e) => {
 
   // caso a cor de fundo do '#pixel-board' não for branca
   // eu atualizo novamente para branco
-  if (checkBackgroundColorInSection() !== 'rgba(0, 0, 0, 0)') {
+  if (checkBackgroundColorInSection() !== 'rgb(255, 255, 255)') {
     document.querySelector(PIXEL_BOARD_ID).style.backgroundColor = 'white';
   }
 };
@@ -234,7 +234,7 @@ const getPixelColored = (e) => {
 
   for (let i = 0; i < coloredPixelClass.length; i += 1) {
     const myPixels = coloredPixelClass[i].style.backgroundColor;
-    if (myPixels !== 'rgb(0, 0, 0)') {
+    if (myPixels !== 'rgb(255, 255, 255)') {
       e.target.style.backgroundColor = 'white';
     }
   }
