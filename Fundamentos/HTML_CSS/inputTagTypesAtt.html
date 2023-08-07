@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Tag, Types e Attributes</title>
+</head>
+<body>
+  <h2>Formulário</h2>
+  <form action="" method="GET">
+    <!-- vínculo entre label e input é o for, com o id do input -->
+    <label for="input-id">Digite seu nome:
+      <input type="text" name="texto"
+        value="Lalaland" id="input-text"
+        required placeholder="Digite alguma coisa"
+      >
+    </label>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <h2>Textarea</h1>
+  <textarea name="" id="id-text-area" cols="10" rows="5">Texto já Estabelecido</textarea><br>
+  
+  <h2>Checkbox</h2>
+  <form action="" method="GET">
+    <input type="checkbox" name="esporte" value="fut" id="esporte-1">Futebol
+    <input type="checkbox" name="esporte" value="vol" id="esporte-2">Vôlei
+    <input type="checkbox" name="esporte" value="cor" id="esporte-3">Corrida
+    <input type="checkbox" name="esporte" value="bas" id="esporte-4">Basquete
+  </form>
+  
+  <h2>Radio</h2>
+  <label for="tech-1">
+    <input type="radio" name="tech" value="js" id="tech-1">JavaScript
+  </label>
+  <label for="tech-2">
+    <input type="radio" name="tech" value="jv" id="tech-2">JavaS
+  </label>
+  <label for="tech-3">
+    <input type="radio" name="tech" value="ph" id="tech-3">PHP
+  </label>
+  <label for="tech-4">
+    <input type="radio" name="tech" value="sq" id="tech-4">SQL
+  </label>
+
+  <h2>Select</h2>
+  <select name="capital" id="dropdown-capital">
+    <option value="">Belo Horizonte</option>
+    <option value="">Manaus</option>
+    <option value="">Rio de Janeiro</option>
+    <option value="">São Paulo</option>
+  </select>
+
+  <h2>Senha</h2>
+  Minha senha: <input type="password" name="" id="">
+
+  <h2>File</h2>
+  <form action="" method="GET">
+    <input type="file" name="" id="" enctype="multipart/form-data">
+    <button type="submit">Enviar</button>
+  </form>
+
+  <h2>Form</h2>
+  <form action="" method="GET" enctype="multipart/form-data">
+    <p>Usuário</p>
+    <input type="text" name="user" id="" autofocus required>
+    <p>Senha</p>
+    <input type="password" name="senha" id="" required>
+    <br>
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>
