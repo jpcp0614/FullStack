@@ -1,0 +1,34 @@
+.flex-container {
+  display: flex;
+  border: 2px solid black;
+  height: 300px;
+
+}
+
+.flex-item1 {
+  background: red;
+  border: 1px solid red;
+  height: 100px;
+  width: 100px;
+}
+
+.flex-item2 {
+  background: blue;
+  border: 1px solid blue;
+  height: 100px;
+  width: 100px;
+}
+
+.flex-item3 {
+  background: green;
+  border: 1px solid green;
+  height: 100px;
+  width: 100px;
+}
+
+.flex-item4 {
+  background: orange;
+  border: 1px solid orange;
+  height: 100px;
+  width: 100px;
+}
