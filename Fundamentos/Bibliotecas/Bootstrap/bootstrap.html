@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+  <main>
+    <h1>FORMULÁRIO</h1>
+    <form action="" method="GET" enctype="multipart/form-data" >
+      <section class="form-group">
+        <label class="form-label" for="nome-completo">Nome Completo:
+          <input class="form-control" type="text" name="nome" id="nome-completo" placeholder="Digite seu nome" required>
+        </label>
+      </section>
+      <br>
+      <section class="form-group">
+        <label class="form-label" for="input-email">E-mail:
+          <input class="form-control" type="email" name="email" id="input-email" placeholder="Digite seu e-mail" required>
+        </label>
+      </section>
+
+      <br>
+      <section class="form-group">
+        <label class="form-label" for="input-estado">Estado:
+          <select class="form-select" name="estado" id="input-estado">
+            <option value="sp">São Paulo</option>
+            <option value="mg">Minas Gerais</option>
+            <option value="ap" selected>Amapá</option>
+            <option value="rj">Rio de Janeiro</option>
+          </select>
+        </label>
+      </section>
+      <br>
+      <section class="form-group">
+        <p>Selecione sua foto:</p>
+        <input class="form-control" type="file" name="foto" id="foto-perfil">
+      </section>
+      <br>
+      <section class="form-group">
+        <p>Escreva algo</p>
+        <textarea class="form-control" name="sobre" id="textarea-1" cols="30" rows="5"></textarea>
+      </section>
+      <br>        
+      <br>
+      <button class="btn btn-outline-success" type="submit">Enviar formulário</button>
+    </form>
+  </main>
+</body>
+</html>
+
+
