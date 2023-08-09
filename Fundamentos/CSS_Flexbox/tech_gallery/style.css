@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu';
+}
+
+.header-img {
+  width: 70px;
+}
+
+.gallery-img {
+  width: 120px;
+}
+
+.social-img {
+  width: 25px;
+  margin-left: 10px;
+}
+
+header {
+  align-items: center;
+  background-color: #111;
+  color: #FCBA03;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.sign-up {
+  cursor: pointer;
+}
+
+.sign-up:hover {
+  text-decoration: underline;
+}
+
+.text-section {
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px;
+}
+
+p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.card-section {
+  display: flex;
+  flex-wrap: wrap ;  
+  justify-content:center;
+  margin: 10px auto 10px;
+  width:500px;  
+}
+
+div {
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 10px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 5px 8px 5px;
+  padding: 5px;
+}
+
+div h4 {  
+  text-align: center;
+}
+
+hr { 
+  margin: 0 auto;
+  width: 20%;
+}
+
+footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+footer a {
+  margin-top: 10px;
+}
