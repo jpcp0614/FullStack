@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox 2</title>
+</head>
+
+<style>
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2 {
+    margin: 20px;
+  }
+
+  div {
+    border-bottom: 3px solid red;
+    border-left: 3px solid black;
+    border-right: 3px solid green;
+    border-top: 3px solid blue;
+    margin: 20px;
+    min-height: 70px;
+    width: 300px;
+  }
+
+  p {
+    background-color: rgb(4, 111, 173);
+    border: 1px dashed black;
+    color: white;
+  }
+
+  .flex {
+    align-content: space-evenly;
+    align-items: flex-end; /* EIXO Y */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; /* EIXO X */
+  }
+
+</style>
+
+<body>
+  <h1>Aprendendo Flexbox</h1>
+  
+  <!-- * display: flex -->
+  <h2>flex</h2>
+  <div class="flex">
+    <p class="p-1">1 - Cecília Meireles</p>
+    <p class="p-2">2 - Guimarães Rosa</p>
+    <p>3 - Mário Quintana</p>
+  </div>
+</body>
+</html>

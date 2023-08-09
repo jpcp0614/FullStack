@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox</title>
+</head>
+
+<style>
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2 {
+    margin: 20px;
+  }
+
+  div {
+    border: 1px solid black;
+    margin: 20px;
+    min-height: 70px;
+    width: 200px;
+  }
+
+  p {
+    background-color: rgb(4, 111, 173);
+    border: 1px dashed black;
+    color: white;
+  }
+
+  .inline p {
+    display: inline;
+  }
+
+  .inline-block p {
+    display: inline-block;
+    height: 50px;
+  }
+
+  .flex {
+    display: flex;
+    /* flex-direction: row; Por padrão é row */
+    /* flex-wrap: wrap-reverse; Por padrão é nowrap */
+    flex-flow: row wrap; /* Junção de direction com wrap */
+  }
+
+</style>
+
+<body>
+  <h1>Aprendendo Flexbox</h1>
+
+  <!--* display: block -> É o comportamento padrão da tag <p> e da tag <div> -->
+  <h2>block</h2>
+  <div>
+    <p>Cecília Meireles</p>
+    <p>João Cabral de Melo Neto</p>
+    <p>Mário Quintana</p>
+  </div>
+
+  <!--* display: inline -> As tags <p> ficarão em linha (há quebra de linha -->
+  <!--*                    pois os 'nomes' não cabem na mesma linha)        -->
+  <h2>inline</h2>
+  <div class="inline">
+    <p>Cecília Meireles</p>
+    <p>João Cabral de Melo Neto</p>
+    <p>Mário Quintana</p>
+  </div>
+
+  <!--* display: inline-block -> Pode fazer um 'set' nos items dentro da <div> -->
+  <h2>inline-block</h2>
+  <div class="inline-block">
+    <p>Cecília Meireles</p>
+    <p>João Cabral de Melo Neto</p>
+    <p>Mário Quintana</p>
+  </div>
+
+  <!--* display: flex -> Adicionado somente no container (pai):                     -->
+  <!--*                  Todos os elementos em linha (padrão é er horizontal = row) -->
+  <!--*                  Não há espaço entre um elemento e outro -->
+  <!--*                  Quebra a linha do texto e 'estica' as <div's> -->
+  <h2>flex</h2>
+  <div class="flex">
+    <p>1 - Cecília Meireles</p>
+    <p>2 - João Cabral de Melo Neto</p>
+    <p>3 - Mário Quintana</p>
+  </div>
+</body>
+</html>
