@@ -22,13 +22,20 @@ No decorrer desse projeto simples de revisão, virão mais desafios e mais momen
 
 ## Stacks utilizadas
 
-**Fundamentos:** JavaScript, HTML, CSS e Bootstrap
+**Fundamentos:** <br>
+- *JavaScript, HTML, CSS e Bootstrap*
+  - Projetos:
+    - Playground Functions
+    - Pixels Art
 
-**Front-end:** React e Redux
+**Front-end:** <br>
+- *React e Redux*
 
-**Back-end:** NodeJS, TypeScript, MySQL e MongoDB
+**Back-end:** <br>
+- *NodeJS, TypeScript, MySQL e MongoDB*
 
-**Ciência de Dados:** Python
+**Ciência de Dados:** <br>
+- *Python*
 
 <br>
 
