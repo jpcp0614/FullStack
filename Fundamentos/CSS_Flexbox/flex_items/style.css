@@ -1,0 +1,31 @@
+.flex-container {
+  border: 3px solid #333;
+  width: auto;
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: space-between;
+}
+
+.box {
+  background-color: rgb(11, 138, 58);
+  color: white;
+  padding: 0 20px;
+  border-radius: 8px;
+}
+
+/* o sinal '>' significa algum filho */
+.flex-container > .box:nth-child(1) {
+  order: 0;
+}
+
+.flex-container > .box:nth-child(2) {
+  order: 2;
+}
+
+.flex-container > .box:nth-child(3) {
+  order: 3;
+}
+
+.flex-container > .box:nth-child(4) {
+  order: 4;
+}
