@@ -1,0 +1,45 @@
+h1 {
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: xxx-large;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.container img {
+  border: 2px solid black;
+  margin: 0 15px;
+  width: 30%;
+  height: 30%;
+}
+
+/* @media screen and (max-width: 768px) and (min-width: 460px) {
+  body {
+    background-color: rgb(182, 217, 242);
+  }
+} */
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: x-large;
+    padding: 5px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container img {
+    height: 250px;
+    width: 250px;
+  }
+
+  .info {
+    width: 60%;
+  }
+}
