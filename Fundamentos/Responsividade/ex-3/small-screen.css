@@ -53,3 +53,21 @@ figure {
 figcaption {
   font-size: 0.8em;
 }
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: green;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: blue;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    background-color: yellow;
+  }
+}
