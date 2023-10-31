@@ -1,5 +1,5 @@
 {
-  // editor
+	// editor
 	"editor.wordWrap": "on",
 	"editor.fontSize": 18,
 	"editor.lineHeight": 30,
@@ -24,15 +24,16 @@
 	"prettier.singleQuote": true,
 	"prettier.tabWidth": 2,
 	"prettier.semi": true,
-  "cSpell.words": [
-    "adipisicing",
-    "amet",
-    "concat",
-    "consectetur",
-    "elit",
-    "Paolillo",
-    "reactjs",
-    "spotify",
-    "vamo"
-  ],
+	"cSpell.words": [
+		"adipisicing",
+		"amet",
+		"concat",
+		"consectetur",
+		"elit",
+		"Paolillo",
+		"pilates",
+		"reactjs",
+		"spotify",
+		"vamo"
+	]
 }
