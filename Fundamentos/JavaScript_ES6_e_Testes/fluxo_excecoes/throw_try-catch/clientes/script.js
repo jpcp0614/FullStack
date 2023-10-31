@@ -102,23 +102,41 @@ const findPersonByName = (name) => {
 			person = clients[i];
 		}
 	}
-  if (!person) {
-    throw new Error('Pessoa não encontrada, tente novamente');
-  }
+	if (!person) {
+		throw new Error('Pessoa não encontrada, tente novamente');
+	}
 
 	const destinatario = `Destinatário: ${person.name}`;
 	const endereco = `Endereço: ${person.address.street}, ${person.address.number}, ${person.address.neighborhood}, ${person.address.city} - ${person.address.state}`;
-  const cep = `CEP: ${person.address.cep}`;
+	const cep = `CEP: ${person.address.cep}`;
 
 	return `${destinatario}. ${endereco}. ${cep}.`;
 };
 
-console.log(findPersonByName('Maria Souza'));
+// console.log(findPersonByName('Maria'));
 
 const findPersonByPosition = (position) => {
-	// seu código aqui
+	if (!clients[position]) {
+		throw new Error('Posição inválida, tente novamente');
+	}
+
+	return `Cliente: ${clients[position].name}. email: ${clients[position].email}`;
 };
 
+// console.log(findPersonByPosition(7));
+
 const findPeopleByState = (state) => {
-	// seu código aqui
+	let estado = [];
+	for (let i = 0; i < clients.length; i++) {
+		if (clients[i].address.state === state) {
+			estado.push(clients[i].name);
+		}
+	}
+	if (estado.length === 0) {
+		throw new Error('Ops, nenhuma pessoa mora nesse estado, tente outro');
+	}
+
+  return estado;
 };
+
+// console.log(findPeopleByState('RJ'));
