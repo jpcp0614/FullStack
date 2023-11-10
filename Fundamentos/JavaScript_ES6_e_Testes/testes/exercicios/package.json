@@ -1,0 +1,16 @@
+{
+	"name": "exercicios",
+	"version": "1.0.0",
+	"description": "",
+	"main": "removeItem.js",
+  "type": "module",
+	"scripts": {
+		"test": "NODE_OPTIONS='--experimental-vm-modules' jest ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"jest": "^29.7.0"
+	}
+}
