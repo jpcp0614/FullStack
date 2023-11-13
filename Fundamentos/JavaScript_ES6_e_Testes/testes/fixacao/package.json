@@ -1,8 +1,8 @@
 {
-	"name": "matchers",
+	"name": "fixacao",
 	"version": "1.0.0",
 	"description": "",
-	"main": "exemplo01.test.js",
+	"main": "createItem.js",
 	"type": "module",
 	"scripts": {
 		"test": "NODE_OPTIONS='--experimental-vm-modules' jest . --coverage"
