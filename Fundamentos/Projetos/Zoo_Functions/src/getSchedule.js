@@ -19,21 +19,17 @@ const noParams = () => {
   return obj;
 };
 
-const returnDay = (scheduleTarget) => ({
+const getDay = (scheduleTarget) => ({
   [scheduleTarget]: noParams()[scheduleTarget],
 });
 
-const closedMonday = () => (
-  {
-    Monday: { officeHour: 'CLOSED', exhibition: 'The zoo will be closed!' },
-  });
+const getAnimal = (scheduleTarget) => species.find((item) =>
+  item.name === scheduleTarget).availability;
 
 function getSchedule(scheduleTarget) {
-  if (scheduleTarget === 'Monday') return closedMonday();
-  if (Object.keys(noParams()).includes(scheduleTarget)) return returnDay(scheduleTarget);
+  if (species.map((item) => item.name).includes(scheduleTarget)) return getAnimal(scheduleTarget);
+  if (Object.keys(noParams()).includes(scheduleTarget)) return getDay(scheduleTarget);
   return noParams();
 }
-
-console.log(getSchedule('Tuesday'));
 
 module.exports = getSchedule;
