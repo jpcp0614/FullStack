@@ -58,7 +58,7 @@ describe('8 - Crie o agendamento que disponibilize as informações de horário 
       },
       'Friday': {
         'officeHour': 'Open from 10am until 8pm',
-        'exhibition': [ 'tigers', 'otters', 'frogs', 'elephants', 'giraffes' ],
+        'exhibition': [ 'tigers', 'otters', 'frogs', 'snakes', 'elephants', 'giraffes' ],
       },
       'Saturday': {
         'officeHour': 'Open from 8am until 10pm',

@@ -19,10 +19,21 @@ const noParams = () => {
   return obj;
 };
 
+const returnDay = (scheduleTarget) => ({
+  [scheduleTarget]: noParams()[scheduleTarget],
+});
+
+const closedMonday = () => (
+  {
+    Monday: { officeHour: 'CLOSED', exhibition: 'The zoo will be closed!' },
+  });
+
 function getSchedule(scheduleTarget) {
-  if (!scheduleTarget) return noParams();
+  if (scheduleTarget === 'Monday') return closedMonday();
+  if (Object.keys(noParams()).includes(scheduleTarget)) return returnDay(scheduleTarget);
+  return noParams();
 }
 
-console.log(getSchedule());
+console.log(getSchedule('Tuesday'));
 
 module.exports = getSchedule;
