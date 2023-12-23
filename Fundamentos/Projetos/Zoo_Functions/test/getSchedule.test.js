@@ -19,7 +19,7 @@ describe('8 - Crie o agendamento que disponibilize as informações de horário 
       },
       'Friday': {
         'officeHour': 'Open from 10am until 8pm',
-        'exhibition': [ 'tigers', 'otters', 'frogs', 'elephants', 'giraffes' ],
+        'exhibition': [ 'tigers', 'otters', 'frogs', 'snakes', 'elephants', 'giraffes' ],
       },
       'Saturday': {
         'officeHour': 'Open from 8am until 10pm',
@@ -39,7 +39,7 @@ describe('8 - Crie o agendamento que disponibilize as informações de horário 
 
     expect(actual).toEqual(expected);
   });
-  
+
   it('caso os parâmetros não seja um animal e dia, retorna um objeto com os horários do dia e os animais em exibição', () => {
     const actual = getSchedule('qualquercoisa');
 
@@ -75,7 +75,7 @@ describe('8 - Crie o agendamento que disponibilize as informações de horário 
       },
       'Monday': { 'officeHour': 'CLOSED', 'exhibition': 'The zoo will be closed!' },
     };
-  
+
     expect(actual).toEqual(expected);
   });
 
@@ -112,7 +112,7 @@ describe('8 - Crie o agendamento que disponibilize as informações de horário 
         'exhibition': [ 'tigers', 'bears', 'penguins', 'otters', 'frogs', 'giraffes' ],
       },
     };
-    
+
     expect(actual).toEqual(expected);
   }
 
