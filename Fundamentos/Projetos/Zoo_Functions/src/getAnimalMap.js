@@ -33,26 +33,28 @@ const namesInclude = (...opts) => {
   obj[location].push({ [name]: animalsResidents(resid) });
 };
 
-const optionsParams = (sorted) => {
+const optionsParams = (sorted, sex) => {
   const obj = {};
 
   species.forEach((elem) => {
     const { location, name, residents } = elem;
-    const resid = [...residents];
+    let resid = [...residents];
     verifyObject(obj, location);
+    if (sex) resid = residents.filter((item) => item.sex === sex);
+
     if (sorted) return animalsSorted(obj, location, name, resid);
-    return namesInclude(obj, location, name, resid);
+    namesInclude(obj, location, name, resid);
   });
   return obj;
 };
 
 function getAnimalMap(options = {}) {
-  const { includeNames, sorted } = options;
-  if (includeNames) return optionsParams(sorted);
+  const { includeNames, sorted, sex } = options;
+  if (includeNames) return optionsParams(sorted, sex);
 
   return noParams();
 }
 
-console.log(getAnimalMap({ includeNames: true, sorted: true }));
+console.log(getAnimalMap({ includeNames: true, sex: 'female' }));
 
 module.exports = getAnimalMap;
