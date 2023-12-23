@@ -166,7 +166,7 @@ module.exports = {
       name: 'snakes',
       popularity: 3,
       location: 'SW',
-      availability: ['Sunday', 'Saturday', 'Frida', 'Thursday'],
+      availability: ['Sunday', 'Saturday', 'Friday', 'Thursday'],
       residents: [
         {
           name: 'Paulette',
