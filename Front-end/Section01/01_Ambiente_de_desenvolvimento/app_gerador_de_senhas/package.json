@@ -5,11 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite --open"
   },
   "author": "João Paulo",
   "license": "ISC",
   "dependencies": {
-    "nanoid": "^5.0.4"
+    "nanoid": "^5.0.4",
+    "vite": "^5.0.10"
   }
 }
