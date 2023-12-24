@@ -11,6 +11,7 @@
   "author": "João Paulo",
   "license": "ISC",
   "dependencies": {
+    "clipboard-copy": "^4.0.1",
     "nanoid": "^5.0.4",
     "vite": "^5.0.10"
   },
