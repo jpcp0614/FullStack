@@ -1,0 +1,21 @@
+{
+	"name": "app_validador_de_campos",
+	"version": "1.0.0",
+	"description": "Validador de Campos",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "vite --open",
+		"lint": "eslint ./src"
+	},
+	"keywords": [],
+	"author": "João Paulo",
+	"license": "ISC",
+	"dependencies": {
+		"vite": "^5.0.10"
+	},
+	"devDependencies": {
+		"eslint": "^8.56.0"
+	}
+}
