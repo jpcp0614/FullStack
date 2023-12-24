@@ -13,6 +13,7 @@
 	"author": "João Paulo",
 	"license": "ISC",
 	"dependencies": {
+		"validator": "^13.11.0",
 		"vite": "^5.0.10"
 	},
 	"devDependencies": {

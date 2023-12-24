@@ -1,3 +1,3 @@
+import validator from 'validator';
 import './styles.css';
 
-console.log('Validador de Campos');
