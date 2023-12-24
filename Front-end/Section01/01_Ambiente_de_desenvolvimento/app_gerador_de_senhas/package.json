@@ -5,12 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "vite --open"
+    "dev": "vite --open",
+    "lint": "eslint ./src"
   },
   "author": "João Paulo",
   "license": "ISC",
   "dependencies": {
     "nanoid": "^5.0.4",
     "vite": "^5.0.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0"
   }
 }
