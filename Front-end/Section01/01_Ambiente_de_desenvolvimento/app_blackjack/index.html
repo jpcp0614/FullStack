@@ -4,19 +4,50 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Aula 01 - FE</title>
-    <script src="./src/main.js" type="module"></script>
+		<script src="./src/main.js" type="module"></script>
 	</head>
 	<body>
 		<header class="top">
 			<button class="shuffle">
-				<img src="./src/assets/shuffle.png" alt="">
+				<img src="./src/assets/shuffle.png" alt="" />
 			</button>
 			<div class="player-2 cards">
-				<img src="./src/assets/placeholderCard.png" alt="" class="card">
-				<img src="./src/assets/placeholderCard.png" alt="" class="card">
-				<img src="./src/assets/placeholderCard.png" alt="" class="card">
+				<img src="./src/assets/placeholderCard.png" alt="" class="card" />
+				<img src="./src/assets/placeholderCard.png" alt="" class="card" />
+				<img src="./src/assets/placeholderCard.png" alt="" class="card" />
 			</div>
 			<div class="score">0</div>
 		</header>
+		<h1>Blackjack</h1>
+		<main class="center">
+			<div class="player-1 cards">
+				<img
+					src="src/assets/placeholderCard.png"
+					alt="Carta do player 1"
+					class="card"
+				/>
+				<img
+					src="src/assets/placeholderCard.png"
+					alt="Carta do player 2"
+					class="card"
+				/>
+				<img
+					src="src/assets/placeholderCard.png"
+					alt="Carta do player 2"
+					class="card"
+				/>
+				<img
+					src="src/assets/placeholderCard.png"
+					alt="Carta do player 2"
+					class="card"
+				/>
+			</div>
+			<div class="score">0</div>
+			<img src="src/assets/lose.png" alt="Perdeu" class="result" />
+			<div class="buttons">
+				<button class="draw gameBtn">+</button>
+				<button class="stop gameBtn">-</button>
+			</div>
+		</main>
 	</body>
 </html>
