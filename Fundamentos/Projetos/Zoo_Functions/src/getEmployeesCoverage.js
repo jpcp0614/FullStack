@@ -2,8 +2,15 @@ const data = require('../data/zoo_data');
 
 const { employees, species } = data;
 
-const employee = (obj) =>
-  employees.find((item) => item.firstName === obj.name || item.lastName === obj.name);
+const employeeName = (obj) => employees.find((item) => item
+  .firstName === obj.name || item.lastName === obj.name);
+
+const employeeId = (obj) => employees.find((item) => item.id === obj.id);
+
+const employee = (obj) => {
+  if (obj.name) return employeeName(obj);
+  if (obj.id) return employeeId(obj);
+};
 
 const funcIds = (obj) => employee(obj).responsibleFor;
 
@@ -27,6 +34,6 @@ function getEmployeesCoverage(obj) {
   return { id: emp.id, fullName, species: specs, locations };
 }
 
-console.log(getEmployeesCoverage({ name: 'Sharonda' }));
+console.log(getEmployeesCoverage({ id: '4b40a139-d4dc-4f09-822d-ec25e819a5ad' }));
 
 module.exports = getEmployeesCoverage;
