@@ -24,7 +24,7 @@ const funcLocations = (obj) => {
   return ids.map((elem) => species.find((item) => item.id === elem).location);
 };
 
-function getEmployeesCoverage(obj) {
+const buildEmployee = (obj) => {
   const emp = employee(obj);
   const specs = funcSpecies(obj);
   const locations = funcLocations(obj);
@@ -32,8 +32,18 @@ function getEmployeesCoverage(obj) {
   const fullName = `${emp.firstName} ${emp.lastName}`;
 
   return { id: emp.id, fullName, species: specs, locations };
+};
+
+const noParams = () => {
+  const array = [];
+  employees.forEach((item) => array.push(buildEmployee({ id: item.id })));
+  return array;
+};
+
+function getEmployeesCoverage(obj) {
+  return (!obj) ? noParams() : buildEmployee(obj);
 }
 
-console.log(getEmployeesCoverage({ id: '4b40a139-d4dc-4f09-822d-ec25e819a5ad' }));
+console.log(getEmployeesCoverage());
 
 module.exports = getEmployeesCoverage;
