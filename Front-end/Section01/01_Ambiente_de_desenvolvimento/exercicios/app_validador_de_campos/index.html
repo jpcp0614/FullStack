@@ -4,9 +4,26 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Validador de Campos</title>
-    <script src="./src/main.js" type="module"></script>
+		<script src="./src/main.js" type="module" defer></script>
 	</head>
 	<body>
-    <h1>Validador de Campos</h1>
-  </body>
+		<div class="container">
+			<h1>Validador de Campos</h1>
+			<form>
+				<input type="text" placeholder="Digite seu texto aqui" id="value" />
+
+				<select name="campo" id="option">
+					<option value="cpf">CPF</option>
+					<option value="hexColor">Cor Hexadecimal</option>
+					<option value="email">E-mail</option>
+					<option value="uuid">UUID v4</option>
+					<option value="url">Url</option>
+				</select>
+
+				<button id="button">Validar</button>
+
+				<p id="answer">Digite o valor, escolha a opção e clique em validar</p>
+			</form>
+		</div>
+	</body>
 </html>
