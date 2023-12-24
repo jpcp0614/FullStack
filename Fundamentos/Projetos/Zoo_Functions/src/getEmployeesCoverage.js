@@ -12,6 +12,10 @@ const employee = (obj) => {
   if (obj.id) return employeeId(obj);
 };
 
+const error = (obj) => {
+  if (!employee(obj)) throw new Error('Informações inválidas');
+};
+
 const funcIds = (obj) => employee(obj).responsibleFor;
 
 const funcSpecies = (obj) => {
@@ -25,6 +29,7 @@ const funcLocations = (obj) => {
 };
 
 const buildEmployee = (obj) => {
+  error(obj);
   const emp = employee(obj);
   const specs = funcSpecies(obj);
   const locations = funcLocations(obj);
@@ -43,7 +48,5 @@ const noParams = () => {
 function getEmployeesCoverage(obj) {
   return (!obj) ? noParams() : buildEmployee(obj);
 }
-
-console.log(getEmployeesCoverage());
 
 module.exports = getEmployeesCoverage;
