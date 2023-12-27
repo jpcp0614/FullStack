@@ -1,0 +1,16 @@
+{
+  "name": "fixacao_microblogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open"
+  },
+  "keywords": [],
+  "author": "João Paulo",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^5.0.10"
+  }
+}
