@@ -23,5 +23,5 @@ selectUsers.addEventListener('change', () => {
 
 	fetch(`${POSTS_SELECT_API}${userID}`)
 		.then(response => response.json())
-		.then(({ posts }) => console.log(posts))
+		.then(({ posts }) => fillPosts(posts))
 });
