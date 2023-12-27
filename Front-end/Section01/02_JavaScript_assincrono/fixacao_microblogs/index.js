@@ -31,5 +31,5 @@ selectUsers.addEventListener('change', () => {
 			return fetch(`${COMMENTS_API}/${featuredPost.id}/comments`);
 		})
 		.then((response) => response.json())
-		.then(({ comments }) => console.log(comments));
+		.then(({ comments }) => fillFeaturedPostComments(comments));
 });
