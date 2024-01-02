@@ -2,52 +2,42 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Aula 01 - FE</title>
 		<script src="./src/main.js" type="module"></script>
+		<title>Blackjack</title>
 	</head>
+
 	<body>
-		<header class="top">
-			<button class="shuffle">
-				<img src="./src/assets/shuffle.png" alt="" />
-			</button>
-			<div class="player-2 cards">
-				<img src="./src/assets/placeholderCard.png" alt="" class="card" />
-				<img src="./src/assets/placeholderCard.png" alt="" class="card" />
-				<img src="./src/assets/placeholderCard.png" alt="" class="card" />
+		<div class="table">
+			<div class="top">
+				<div class="deck hidden">
+					<button class="shuffle">
+						<img src="src/assets/shuffle.png" alt="Embaralhar cartas" />
+					</button>
+				</div>
+				<div class="player-2 cards"></div>
+				<div class="scoreContainer">
+					<div class="player-2 score">0</div>
+				</div>
 			</div>
-			<div class="score">0</div>
-		</header>
-		<h1>Blackjack</h1>
-		<main class="center">
-			<div class="player-1 cards">
-				<img
-					src="src/assets/placeholderCard.png"
-					alt="Carta do player 1"
-					class="card"
-				/>
-				<img
-					src="src/assets/placeholderCard.png"
-					alt="Carta do player 2"
-					class="card"
-				/>
-				<img
-					src="src/assets/placeholderCard.png"
-					alt="Carta do player 2"
-					class="card"
-				/>
-				<img
-					src="src/assets/placeholderCard.png"
-					alt="Carta do player 2"
-					class="card"
-				/>
+			<h1>BLACKJACK</h1>
+			<div class="center">
+				<div class="player-1 cards"></div>
+				<div class="scoreContainer">
+					<div class="player-1 score">0</div>
+					<img
+						src="src/assets/win.png"
+						alt="Resultado da partida"
+						class="result hidden"
+					/>
+				</div>
+				<div class="buttons">
+					<button class="draw gameBtn">+</button>
+					<button class="stop gameBtn">-</button>
+				</div>
+				<img src="./src/assets/chips.png" alt="casino chips" class="chips" />
 			</div>
-			<div class="score">0</div>
-			<img src="src/assets/lose.png" alt="Perdeu" class="result" />
-			<div class="buttons">
-				<button class="draw gameBtn">+</button>
-				<button class="stop gameBtn">-</button>
-			</div>
-		</main>
+		</div>
 	</body>
 </html>

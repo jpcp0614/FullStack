@@ -1,50 +1,108 @@
 body {
-  align-items: center;
-  background-image: url('./assets/background.png');
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 100vh;
   margin: 0;
 }
 
-.top {
-  align-items: center;
-  background-image: url('./assets/topBackground.png');
-  background-size: 250px;
-  border: 5px solid white;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-top: none;
-  box-sizing: border-box;
+.table {
+  position: relative;
   display: flex;
-  height: 270px;
-  justify-content: space-between;
-  padding: 0 50px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100vw;
+  height: 100vh;
+  background-image: url('./assets/background.png');
+  background-position: center;
+  overflow: hidden;
+}
+
+.top {
+  background-image: url('./assets/topBackground.png');
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  background-repeat: repeat;
+  background-size: 220px;
+  border: 6px solid #ffffff;
+  border-top: none;
+  position: relative;
+  width: 500px;
+  height: 270px;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.deck {
+  background-image: url(./assets/deck.png);
+  width: 75px;
+  height: 110px;
+  background-size: cover;
+  position: absolute;
+  left: 70px;
+  bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck.hidden {
+  background: transparent;
 }
 
 .shuffle {
-  background-color: rgba(0, 0, 0, 0.53);
-  border: 3px solid #FFFFFF;
-  border-radius: 50%;
-  height: 50px;
   width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.53);
+  border: 3px solid #ffffff;
+  cursor: pointer;
 }
 
 .shuffle img {
   width: 100%;
 }
 
-.cards {
-  align-items: center;
-  background-image: url('./assets/cardsBase.png');
-  background-repeat: no-repeat;
-  background-size: contain;
+.shuffle:disabled {
+  display: none;
+}
+
+.shuffle:hover {
+  transform: scale(1.1);
+}
+
+.scoreContainer {
+  flex: 0 0 100%;
+  height: 100px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   position: relative;
+}
+
+.score {
+  font-size: 36px;
+  color: black;
+  width: 56px;
+  background: #ffffff;
+  border-radius: 21px;
+  text-align: center;
+}
+
+.result {
+  position: absolute;
+  left: 65%;
+}
+
+.cards {
+  position: relative;
+  background-image: url('./assets/cardsBase.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cards > .card {
@@ -52,36 +110,39 @@ body {
   width: 80%;
 }
 
-.score {
-  align-items: center;
-  background-color: white;
-  border-radius: 21px;
-  color: black;
-  display: flex;
-  font-size: 36px;
-  justify-content: center;
-  height: 44px;
-  width: 56px;
+.cards > .card:nth-child(2) {
+  top: 2%;
+  right: -2%;
 }
 
-.player-2.cards {
-  height: 112px;
-  width: 77px;
+.cards > .card:nth-child(3) {
+  top: -6%;
+  right: -12%;
 }
 
-h1 {
-  color: white;
-  font-size: 48px;
-  text-align: center;
+.cards > .card:nth-child(4) {
+  top: -14%;
+  right: -22%;
 }
 
-.center {
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  height: 45%;
-  justify-content: space-between;
+.cards > .card:nth-child(5) {
+  top: -22%;
+  right: -32%;
+}
+
+.cards > .card:nth-child(6) {
+  top: -30%;
+  right: -42%;
+}
+
+.cards > .card:nth-child(7) {
+  top: -38%;
+  right: -52%;
+}
+
+.cards > .card:nth-child(8) {
+  top: -46%;
+  right: -62%;
 }
 
 .player-1.cards {
@@ -89,48 +150,58 @@ h1 {
   width: 116px;
 }
 
-.buttons {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 100px;
+.player-2.cards {
+  height: 112px;
+  width: 77px;
 }
 
-.cards > .card:nth-child(2) {
-  left: 25%;
+.cards.player-1::before {
+  content: '';
+  width: 116px;
+  height: 169px;
+  position: absolute;
+  background-image: url(./assets/cardsBase.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: -25px;
+  right: -200px;
+  transform: rotate(-17deg);
 }
 
-.cards > .card:nth-child(3) {
-  left: 40%;
+.cards.player-1::after {
+  content: '';
+  width: 116px;
+  height: 169px;
+  position: absolute;
+  background-image: url(./assets/cardsBase.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: -25px;
+  left: -200px;
+  transform: rotate(17deg);
 }
 
-.cards > .card:nth-child(4) {
-  left: 55%;
-}
-
-.cards > .card:nth-child(5) {
-  left: 70%;
-}
-
-.cards > .card:nth-child(6) {
-  left: 85%;
+h1 {
+  font-size: 48px;
+  color: white;
+  text-align: center;
 }
 
 .result {
-  height: 50px;
   width: 45px;
+  height: 50px;
 }
 
 .gameBtn {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  border: 4px solid #FFFFFF;
+  width: 40px;
+  height: 40px;
+  font-size: 35px;
+  border: 4px solid #ffffff;
   border-radius: 5px;
   color: white;
-  display: flex;
-  font-size: 35px;
-  height: 40px;
-  justify-content: center;
-  width: 40px;
 }
 
 .gameBtn.draw {
@@ -141,10 +212,6 @@ h1 {
 .gameBtn.stop {
   background-color: rgb(214, 0, 0);
   border-color: rgb(255, 0, 0);
-}
-
-.hidden {
-  opacity: 0;
 }
 
 .gameBtn:enabled:hover {
@@ -158,4 +225,33 @@ h1 {
 .gameBtn:disabled {
   background-color: rgba(0, 0, 0, 0.5);
   border-color: rgba(0, 0, 0, 0.5);
+}
+
+.center {
+  margin-top: 30px;
+  display: flex;
+  position: relative;
+  width: 375px;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.chips {
+  width: 140px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+}
+
+img.hidden {
+  opacity: 0;
 }
