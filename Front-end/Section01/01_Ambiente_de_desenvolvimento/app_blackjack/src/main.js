@@ -6,6 +6,15 @@ const shuffleButton = document.querySelector('.shuffle');
 const stopButton = document.querySelector('.stop');
 const drawButton = document.querySelector('.draw');
 
-shuffleButton.addEventListener('click', startNewGame);
+let deckId;
+
+shuffleButton.addEventListener('click', () => {
+  startNewGame()
+    .then((dados) => {
+      deckId = dados.deck_id;
+      console.log(deckId);
+    });
+});
+
 stopButton.addEventListener('click', stopGame);
 drawButton.addEventListener('click', drawCard);
