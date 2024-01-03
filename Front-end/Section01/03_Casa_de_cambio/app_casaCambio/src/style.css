@@ -44,13 +44,15 @@ h1 span {
 .div-input span {
   color: white;
   font-size: 12px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 #input-coin {
   background-color: #D9D9D91A;
   border: none;
   border-radius: 10px;
+  color: white;
+  font-size: 18px;
   height: 48px;
   padding: 0 10px;
   width: 150px;
@@ -78,8 +80,54 @@ button:hover {
 .frame {
   background-color: rgba(255, 255, 255, 0.06);
   border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   height: 580px;
   margin-top: 50px;
+  overflow-y: auto;
   width: 900px;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 20px;
+  font-size: 25px;
+  font-weight: 600;
+  width: 900px;
+}
+
+.cards-coin {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.20);
+  border-radius: 5px;
+  display: flex;
+  font-size: 14px;
+  height: 40px;
+  justify-content: space-between;
+  margin: 10px 18px;
+  padding: 0 18px;
+  width: 150px;
+}
+
+.img-coin {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50px;
+}
+
+h3 {
+  color: white;
+  font-weight: 400;
+}
+
+h4 {
+  color: gold;
+  font-size: 16px;
+  font-weight: 400;
 }
 /* -------- */
