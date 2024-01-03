@@ -7,6 +7,7 @@ const API_URL_CAT = 'https://api.thecatapi.com/v1/images/search';
 
 const btnGetRandomDog = document.querySelector('.get-dog');
 const btnGetRandomCat = document.querySelector('.get-cat');
+const btnSurprise = document.querySelector('.surprise');
 const image = document.querySelector('#image');
 
 btnGetRandomDog.addEventListener('click', () => {
@@ -21,4 +22,15 @@ btnGetRandomCat.addEventListener('click', () => {
 		console.log(data[0]);
 		image.src = data[0].url;
 	});
+});
+
+btnSurprise.addEventListener('click', () => {
+	Promise.any([
+		fetchApi(API_URL_DOG),
+		fetchApi(API_URL_CAT),
+	])
+		.then((data) => {
+			const img = data.message || data[0].url;
+			image.src = img;
+		});
 });
