@@ -12,6 +12,7 @@
   "author": "João Paulo",
   "license": "ISC",
   "dependencies": {
+    "sweetalert2": "^11.10.2",
     "vite": "^5.0.10"
   },
   "devDependencies": {
