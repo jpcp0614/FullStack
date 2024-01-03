@@ -52,7 +52,8 @@ h1 span {
   border: none;
   border-radius: 10px;
   height: 48px;
-  width: 170px;
+  padding: 0 10px;
+  width: 150px;
 }
 
 button {
