@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+* {
+  font-family: 'Fira Code', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #282C33;
+}
+
+/*   -- CONTAINER --   */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 70px 0 0 200px; 
+}
+
+h1 {
+  color: white;
+  font-size: 60px;
+}
+
+h1 span {
+  color: #95EBA8;
+}
+
+/* CONTAINER-SEARCH */
+.container-search {
+  display: flex;
+  margin: 20px 0;
+  align-items: flex-end;
+}
+
+.div-input {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-input span {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+#input-coin {
+  background-color: #D9D9D91A;
+  border: none;
+  border-radius: 10px;
+  height: 48px;
+  width: 170px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  background-color: #96EB95;
+  cursor: pointer;
+  font-size: 18px;
+  height: 48px;
+  margin-left: 14px;
+  transition: 0.2s;
+  width: 170px;
+}
+
+button:hover {
+  background-color: #33573b;
+  color: white;
+}
+/* --------------- */
+
+/*   FRAME   */
+.frame {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  height: 580px;
+  margin-top: 50px;
+  width: 900px;
+}
+/* -------- */
