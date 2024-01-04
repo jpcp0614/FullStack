@@ -1,0 +1,22 @@
+{
+	"name": "app_test_cep",
+	"version": "1.0.0",
+	"description": "Aplicativo de tests",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "NODE_OPTIONS='--experimental-vm-modules' jest .",
+		"dev": "vite --open --port 8080"
+	},
+	"keywords": [],
+	"author": "João Paulo",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^8.56.0",
+		"jest": "^29.7.0"
+	},
+	"dependencies": {
+		"sweetalert2": "^11.10.2",
+		"vite": "^5.0.10"
+	}
+}
