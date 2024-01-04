@@ -1,5 +1,7 @@
 import './style.css';
 
+import Swal from 'sweetalert2';
+
 const inputEl = document.querySelector('.input-cep');
 const buttonEl = document.querySelector('.button-cep');
 const preEl = document.querySelector('.address');
@@ -19,6 +21,11 @@ buttonEl.addEventListener('click', async () => {
 		const data =  await fetchApi(cep);
 		preEl.innerHTML = JSON.stringify(data);
 	} catch (error) {
-		return console.log(error.message);
+		Swal.fire({
+			title: 'Deu ruim!!!',
+			text: error.message,
+			icon: 'error',
+			confirmButtonText: 'Cool',
+		});
 	}
 });
