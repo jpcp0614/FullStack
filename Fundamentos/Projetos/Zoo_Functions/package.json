@@ -1,0 +1,20 @@
+{
+  "name": "project-zoo-functions",
+  "version": "1.0.0",
+  "description": "#vqv 🚀",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-config-trybe-fundamentals": "1.1.0",
+    "faker": "5.5.3",
+    "jest": "25.2.3"
+  }
+}

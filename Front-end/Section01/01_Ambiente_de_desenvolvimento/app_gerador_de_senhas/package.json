@@ -1,0 +1,21 @@
+{
+  "name": "app_gerador_de_senhas",
+  "version": "1.0.0",
+  "description": "Gerador de Senhas",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "lint": "eslint ./src"
+  },
+  "author": "João Paulo",
+  "license": "ISC",
+  "dependencies": {
+    "clipboard-copy": "^4.0.1",
+    "nanoid": "^5.0.4",
+    "vite": "^5.0.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0"
+  }
+}

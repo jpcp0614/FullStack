@@ -27,6 +27,8 @@ No decorrer desse projeto simples de revisão, virão mais desafios e mais momen
   - Projetos:
     - Playground Functions
     - Pixels Art
+    - Trybewarts
+    - Zoo Functions
 
 **Front-end:** <br>
 - *React e Redux*
