@@ -1,0 +1,47 @@
+body {
+  align-items: center;
+  background-color: rgb(10, 10, 15);
+  color: white;
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  max-height: 400px;
+  max-width: 500px;
+  padding: 10px 40px;
+}
+
+.address {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+  white-space: pre-wrap;
+  width: 274px;
+  word-wrap: break-word;
+}
+
+.button-cep {
+  background-color: rgb(237, 128, 69);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.button-cep:hover {
+  background: rgb(111, 70, 27);
+  color: white;
+}
+
+.input-cep {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
