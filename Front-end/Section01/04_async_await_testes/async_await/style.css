@@ -11,7 +11,6 @@
   margin: 0 auto;
   padding: 20px;
   width: 400px;
-  position: relative;
 }
 
 .quote {
@@ -26,10 +25,6 @@
 .author {
   color: rgb(255, 115, 0);
   font-size: 12px;
-  margin-top: 20px;
-  position: absolute;
-  right: 150px;
-  top: 30px;
 }
 
 .get-quote {
@@ -45,4 +40,8 @@
 
 .get-quote:hover {
   background-color: rgb(12, 51, 100);
+}
+
+.error {
+  color: red;
 }
