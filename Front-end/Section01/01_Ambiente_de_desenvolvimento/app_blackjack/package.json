@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Aplicativo BlackJack",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite --open",
@@ -15,6 +16,10 @@
     "vite": "^5.0.10"
   },
   "devDependencies": {
-    "eslint": "^8.56.0"
+    "@babel/core": "^7.23.7",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "node-fetch": "^3.3.2"
   }
 }
