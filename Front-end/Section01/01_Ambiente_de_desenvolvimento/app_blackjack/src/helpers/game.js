@@ -28,3 +28,13 @@ export const addCardToPlayer = (card, playerNumber, playersScore) => {
   document.querySelector(`.player-${playerNumber}.score`).textContent =
 		playersScore[playerNumber];
 };
+
+export const restartGame = (playersScore) => {
+  playersScore[1] = 0;
+  playersScore[2] = 0;
+  document.querySelector('.player-1.score').textContent = 0;
+  document.querySelector('.player-2.score').textContent = 0;
+  document.querySelector('.player-1.cards').innerHTML = '';
+  document.querySelector('.player-2.cards').innerHTML = '';
+  document.querySelector('.result').classList.add('hidden');
+};
