@@ -36,6 +36,11 @@ describe('Testa a função getMagicCard', () => {
 		expect(response).toEqual(card);
 
 	});
-	
+
+	it('Deve retornar um error, com a mensagem "Id is not found!" ao passar "idDesconhecido"', async () => {
+		const response = await getMagicCard('idDesconhecido');
+
+		expect(response).toEqual(new Error('Id is not found!'))
+	});
 	
 });
