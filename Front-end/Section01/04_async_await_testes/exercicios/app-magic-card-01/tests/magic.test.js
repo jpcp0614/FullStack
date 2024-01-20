@@ -9,4 +9,9 @@ describe('Testa a função getMagicCard', () => {
 		
 		expect(name).toBe('Ancestor\'s Chosen');
 	});
+
+	it('Deve ser uma função', () => {
+		expect(typeof getMagicCard).toBe('function');
+	});
+	
 });
