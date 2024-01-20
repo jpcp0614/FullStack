@@ -20,5 +20,11 @@ describe('Testa a função getMagicCard', () => {
 		expect(fetch).toHaveBeenCalled();
 	});
 	
+	it('A função fetch deve ser chamada com o argumento "130550", usando o endpoint "https://api.magicthegathering.io/v1/cards/130550"', async () => {
+		const endpoint = 'https://api.magicthegathering.io/v1/cards/130550';
+		await getMagicCard('130550');
+
+		expect(fetch).toHaveBeenCalledWith(endpoint);
+	});
 	
 });
