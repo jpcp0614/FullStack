@@ -1,4 +1,5 @@
 import cardInfo from './card';
+import { jest } from '@jest/globals';
 
 const ENDPOINT = 'https://api.magicthegathering.io/v1/cards/130550';
 

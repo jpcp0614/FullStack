@@ -21,6 +21,6 @@ const getMagicCard = async (cardId) => {
 	}
 };
 
-export default {
+export {
 	getMagicCard,
 };
