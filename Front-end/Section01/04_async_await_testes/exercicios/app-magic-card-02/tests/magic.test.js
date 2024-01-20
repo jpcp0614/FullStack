@@ -9,9 +9,11 @@ describe(' Testa a função saveFavoriteMagicCard', () => {
   it('Testa se um novo card é adicionado a cada execução', async () => {
     // expect.assertions(1);
     await saveFavoriteMagicCard('130553');
-
     expect(favoriteCards.length).toBe(5);
-  }, 5000);
+
+    const lastCard = favoriteCards[favoriteCards.length - 1];
+    expect(lastCard.name).toEqual('Beacon of Immortality');
+  }, 8000); // aumenta setTimeOut
 
   it('Deve retornar favoriteCards contendo apenas os cards favoritos iniciais', () => {
     // expect.assertions();
