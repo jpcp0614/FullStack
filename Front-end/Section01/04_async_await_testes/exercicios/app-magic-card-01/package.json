@@ -4,16 +4,16 @@
 	"description": "",
 	"main": "index.js",
 	"type": "module",
-	"directories": {
-		"test": "tests"
-	},
-	"devDependencies": {
-		"jest": "^27.2.1"
-	},
 	"scripts": {
 		"test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 jest --watchAll"
 	},
 	"keywords": [],
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.23.7",
+		"babel-jest": "^29.7.0",
+		"jest": "^29.7.0",
+		"node-fetch": "^3.3.2"
+	}
 }
