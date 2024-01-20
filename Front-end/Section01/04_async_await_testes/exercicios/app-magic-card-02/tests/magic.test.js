@@ -13,6 +13,9 @@ describe(' Testa a função saveFavoriteMagicCard', () => {
 
     const lastCard = favoriteCards[favoriteCards.length - 1];
     expect(lastCard.name).toEqual('Beacon of Immortality');
+
+    await saveFavoriteMagicCard('130554');
+    expect(favoriteCards.length).toBe(6);
   }, 8000); // aumenta setTimeOut
 
   it('Deve retornar favoriteCards contendo apenas os cards favoritos iniciais', () => {
