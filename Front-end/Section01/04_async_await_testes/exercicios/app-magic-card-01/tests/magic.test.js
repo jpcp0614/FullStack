@@ -1,6 +1,7 @@
 import '../simulator/fetchSimulator.js';
 import { getMagicCard } from '../src/magic.js';
-// import { card } from '../simulator/card.js';
+import cardInfo from '../simulator/card.js';
+
 
 describe('Testa a função getMagicCard', () => {
 	it('Deve possuir a propriedade name com o valor Ancestor"s Chosen', async () => {
@@ -26,5 +27,15 @@ describe('Testa a função getMagicCard', () => {
 
 		expect(fetch).toHaveBeenCalledWith(endpoint);
 	});
+
+	it('O retorno da função getMagicCard deve ser um objeto igual ao card', async () => {
+		const response = await getMagicCard('130550');
+
+		const { card } = cardInfo;
+
+		expect(response).toEqual(card);
+
+	});
+	
 	
 });
