@@ -25,10 +25,10 @@ describe('API', () => {
       expect(card).toHaveProperty('suit');
     });
 
-    it('Deve retornar um erro caso seja utilizado um deckId inválido', () => {
+    it('Deve retornar um erro caso seja utilizado um deckId inválido', async () => {
       const card = drawCard('invalid-id');
 
-      expect(card).rejects.toThrow();
+      await expect(card).rejects.toThrow();
 
     });
     
